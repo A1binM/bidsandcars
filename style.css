@@ -48,7 +48,7 @@
     border: 5px solid black;
     
   }
-  .indphoto {
+  .indexphoto {
     height: 100%;
     width: 100%;
   }
@@ -62,11 +62,7 @@
 
 
 
-.container2 {
-    display: flex;
-    justify-content: space-evenly;
-  }
-  
+
   .item2-right {
     flex-grow: 1;
     height: 50px;
@@ -118,7 +114,7 @@
 
 
 .footer {
-  background-color: grey;
+  background-color: rgba(128, 128, 128, 0.788);
   width: 100%;
   height: 50px;
   text-align: center;
