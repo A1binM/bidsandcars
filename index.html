@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+    <link rel="stylesheet" href="/cv/style/style.css">
+
+    <head>
+        <title>BIDS And CARS</title>
+    </head>
+    <body style="background-color:rgba(255, 253, 208, 0.562);">
+                     <main>
+                        <div class="container">
+
+                            <div class="item">
+                                <a href="/cv/html/index.html" class="links">HEM </a>
+                            </div>
+                            <div class="item">
+                                <a href="/cv/html/products.html" class="links">PRODUKTER </a> 
+                            </div>
+                            <div class="item">
+                                    <a href="/cv/html/products.html" class="links">OM OSS </a> 
+                            </div> 
+                            <div class="item">
+                                    <a href="/cv/html/contact.html" class="links">KONTAKTA OSS </a> 
+                            </div>
+                            <div class="dropdown item" >
+                                <button onclick="myFunction()" class="dropbtn">
+                                    <img src="/Visual Code saker/flexbox/photo/cart.png" height="50px"width="50px" style="vertical-align: middle;;"></button>
+                                <div id="myDropdown" class="dropdown-content">
+                                  <a href="/">Home</a>
+                                  <a href="#about">About</a>
+                                  <a href="#contact">Contact</a>
+                                </div>
+                            </div>
+                              
+                        </div>    
+                    </main>
+                    <h1 class="middle-text">BIDS AND CARS</h1>
+                    <div class="bildspel-container">
+
+                        <div class="bildspel fade">
+                          <img src="/Visual Code saker/flexbox/photo/rs6.jpg" style="width:100%">
+                        </div>
+                      
+                        <div class="bildspel fade">
+                          <img src="/Visual Code saker/flexbox/photo/m3cs.jpg" style="width:100%">
+                        </div>
+                      
+                        <div class="bildspel fade">
+                          <img src="/Visual Code saker/flexbox/photo/sls.webp" style="width:100%">
+                        </div>
+                      
+                        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+                    </div>
+                    <h2 class="middle-text">VECKANS SPECIAL ERBJUDANDEN</h2>
+                    <div class="container2" style="width: 50%;margin: auto;">
+                        <div class="item2">
+                            <img src="/Visual Code saker/flexbox/photo/gallardo.webp" height="100%" width="100%">
+                        </div>
+                        <div class="item2">
+                            <img src="/Visual Code saker/flexbox/photo/f50.webp" height="100%" width="100%">
+                        </div>
+                        <div class="item2">
+                            <img src="/Visual Code saker/flexbox/photo/lfa.jpg" class="indphoto">
+                        </div>
+                    </div>
+        
+        <footer class="footer"><p>&reg;	 BIDS AND CAR. Inc. EVENTUELLA FÖRSÖK ATT STJÄLA ELLER ANVÄNDA DETTA REGISTRERADE VARUMÄRKE RESULTERAS MED STÄMMNING</p></footer>
+        <script>
+            var slideIndex = 1;
+            showSlides(slideIndex);
+
+            function plusSlides(n) {
+                showSlides(slideIndex += n);
+            }
+
+            function currentSlide(n) {
+                showSlides(slideIndex = n);
+            }
+
+            function showSlides(n) {
+            var i;
+            var slides = document.getElementsByClassName("bildspel");
+            var dots = document.getElementsByClassName("dot");
+            if (n > slides.length) {slideIndex = 1}
+            if (n < 1) {slideIndex = slides.length}
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+            }
+            slides[slideIndex-1].style.display = "block";
+            dots[slideIndex-1].className += " active";
+            }
+            
+            function myFunction() {
+                document.getElementById("myDropdown").classList.toggle("show");
+            }
+            window.onclick = function(event) {
+                if (!event.target.matches('.dropbtn')) {
+                    var dropdowns = document.getElementsByClassName("dropdown-content");
+                    var i;
+                    for (i = 0; i < dropdowns.length; i++) {
+                    var openDropdown = dropdowns[i];
+                    if (openDropdown.classList.contains('show')) {
+                        openDropdown.classList.remove('show');
+                        }
+                    }
+                }
+            }
+
+        </script>
+    </body>
+
+</html>
