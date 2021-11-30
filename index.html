@@ -1,15 +1,19 @@
 <!DOCTYPE html>
 <html>
+    <!--link till style.css-->
     <link rel="stylesheet" href="/style.css">
 
     <head>
+        <!--ändrar namn på sidan-->
         <title>BIDS And CARS</title>
     </head>
     <body style="background-color:rgba(255, 253, 208, 0.562);">
                      <main>
+                         <!--container för header-->
                         <div class="container">
-
+                            <!--header boxarna-->
                             <div class="item">
+                                <!--länken + texten-->
                                 <a href="/index.html" class="links">HEM </a>
                             </div>
                             <div class="item">
@@ -21,37 +25,39 @@
                             <div class="item">
                                     <a href="/contact.html" class="links">KONTAKTA OSS </a> 
                             </div>
+                            <!--dropdown meny med button och javascript-->
                             <div class="dropdown item" >
                                 <button onclick="myFunction()" class="dropbtn">
                                     <img src="/img/cart.png" height="50px"width="50px" style="vertical-align: middle;;"></button>
                                 <div id="myDropdown" class="dropdown-content">
-                                  <a href="/products.html">Produkter</a>
-                                  <a href="/about.html">Om Oss</a>
-                                  <a href="/contact.html">Kontakta Oss</a>
+                                  <a href="/documentation.html">Produkter</a>
                                 </div>
                             </div>
                               
                         </div>    
                     </main>
+                    <!--Rubrik-->
                     <h1 class="middle-text">BIDS AND CARS</h1>
-                    <div class="bildspel-container">
-
-                        <div class="bildspel fade">
+                    <!--bildspel container-->
+                    <div class="slideshow-container">
+                        <!--boxen bilderna är i och bilderna-->
+                        <div class="slideshow fade">
                           <img src="/img/rs6.jpg" style="width:100%">
                         </div>
                       
-                        <div class="bildspel fade">
+                        <div class="slideshow fade">
                           <img src="/img/m3cs.jpg" style="width:100%">
                         </div>
                       
-                        <div class="bildspel fade">
+                        <div class="slideshow fade">
                           <img src="/img/sls.webp" style="width:100%">
                         </div>
-                      
+                        <!--fram och bak i bildspel-->
                         <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
                         <a class="next" onclick="plusSlides(1)">&#10095;</a>
                     </div>
                     <h2 class="middle-text">VECKANS SPECIAL ERBJUDANDEN</h2>
+                    <!--flexbox och bilder-->
                     <div class="container" style="width: 50%;margin: auto;">
                         <div class="item2">
                             <img src="/img/gallardo.webp" class="indexphoto">
@@ -63,39 +69,36 @@
                             <img src="/img/lfa.jpg" class="indexphoto">
                         </div>
                     </div>
-        
+        <!--footer-->
         <footer class="footer"><p>&reg;	 BIDS AND CAR. Inc. EVENTUELLA FÖRSÖK ATT STJÄLA ELLER ANVÄNDA DETTA REGISTRERADE VARUMÄRKE RESULTERAS MED STÄMMNING</p></footer>
         <script>
+            //Sidan man är på
             var slideIndex = 1;
             showSlides(slideIndex);
-
+            // förr aoch nästa sida
             function plusSlides(n) {
                 showSlides(slideIndex += n);
             }
-
-            function currentSlide(n) {
-                showSlides(slideIndex = n);
-            }
-
             function showSlides(n) {
-            var i;
-            var slides = document.getElementsByClassName("bildspel");
-            var dots = document.getElementsByClassName("dot");
-            if (n > slides.length) {slideIndex = 1}
-            if (n < 1) {slideIndex = slides.length}
-            for (i = 0; i < slides.length; i++) {
-                slides[i].style.display = "none";
-            }
-            for (i = 0; i < dots.length; i++) {
-                dots[i].className = dots[i].className.replace(" active", "");
-            }
-            slides[slideIndex-1].style.display = "block";
-            dots[slideIndex-1].className += " active";
-            }
-            
+                var i;
+                var slides = document.getElementsByClassName("slideshow");
+                var dots = document.getElementsByClassName("dot");
+                if (n > slides.length) {slideIndex = 1}
+                if (n < 1) {slideIndex = slides.length}
+                for (i = 0; i < slides.length; i++) {
+                    slides[i].style.display = "none";
+                }
+                for (i = 0; i < dots.length; i++) {
+                    dots[i].className = dots[i].className.replace(" active", "");
+                }
+                slides[slideIndex-1].style.display = "block";
+                dots[slideIndex-1].className += " active";
+                }
+            //dropdown kommer fram eller går bort när man trycker 
             function myFunction() {
                 document.getElementById("myDropdown").classList.toggle("show");
             }
+            //Stänger dropdown om man klickar utanför
             window.onclick = function(event) {
                 if (!event.target.matches('.dropbtn')) {
                     var dropdowns = document.getElementsByClassName("dropdown-content");

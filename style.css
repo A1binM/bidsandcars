@@ -1,14 +1,9 @@
-.background {
-    background-color:white;
-    color: blue;
-    
-}
-
+/*container för basic flexbox*/
 .container {
     display: flex;
     justify-content:space-evenly;
   }
-  
+  /*item för header, de gröna boxarna*/
   .item {
     flex-grow: 1;
     height: 100px;
@@ -23,19 +18,90 @@
     margin: 5px;
     border: 5px solid black;
     border-radius: 5px;
+    
 
   }
-
+  /*snyggare anchor*/
   .links {
     color: black;
     text-decoration: none;
 
   }
+  /*SLIDEHOW*/
 
-    
+  * {box-sizing:border-box}
 
-    
+  /*Bildspels container*/
+  .slideshow-container {
+    max-width: 100%;
+    position: relative;
+    margin: auto;
+    vertical-align: middle;
+    justify-content: center;
+  }
   
+  /*flexbox för bilderna*/
+  .slideshow {
+    display: none;
+    background-color:rgba(0,0,0,0.8);
+    border: 5px solid rgba(0,0,0,0.8);
+    border-radius: 5px;
+    height: 50%;
+    width: 50%;
+    margin: auto;
+
+  }
+  /*fram och bak på bildspelet, ändring till utseende*/
+  .prev, .next {
+      cursor: pointer;
+      position: absolute;
+      top: 50%;
+      width: auto;
+      padding: 16px;
+      margin-top: -22px;
+      color: white;
+      font-weight: bold;
+      font-size: 18px;
+      transition: 0.6s ease;
+      user-select: none;
+  }
+
+  .next {
+    right: 25%;
+    border-radius: 3px 0 0 3px;
+  }
+
+  .prev {
+      left: 25%;
+      border-radius: 0px 3px 3px 0px;
+  }
+  /*grå färg när mus över nästa och innan*/
+  .prev:hover, .next:hover {
+    background-color: rgba(0,0,0,0.8);
+  }
+
+
+  /*animation för "fade"*/
+  .fade {
+    -webkit-animation-name: fade;
+    -webkit-animation-duration: 4s;
+    animation-name: fade;
+    animation-duration: 4s;
+  }
+
+  @-webkit-keyframes fade {
+    from {opacity: .4}
+    to {opacity: 1}
+  }
+
+  @keyframes fade {
+    from {opacity: .4}
+    to {opacity: 1}
+  }
+    
+
+    
+  /*flexbox för bilder under slideshow*/
   .item2 {
     flex-grow: 1;
     height: 150px;
@@ -48,71 +114,24 @@
     border: 5px solid black;
     
   }
+  /*minskad bild under slideshow*/
   .indexphoto {
     height: 100%;
     width: 100%;
   }
 
   
-
-  .item + .item {
-    margin-left: 0%;
-  }
-
-
-
-
-
-  .item2-right {
-    flex-grow: 1;
-    height: 50px;
-    justify-content:space-between;
-    color:black;
-    font-weight: bolder;
-    background-color:lightgreen;
-    text-align: center;
-    padding-right: 20px;
-    padding-left: 20px;
-    padding-top: 20px;
-    margin: 5px;
-    border: 5px solid black;
-    width: 10%;
-    flex-direction: column;
-    
-    
-    
-  }
-
-  .item2-middle {
-    height: 50%;
-    width: 50%;
-    color:black;
-    font-weight: bolder;
-    background-color:lightgreen;
-    margin:auto;
-    border: 5px solid black;
-    border-radius: 5px;
-    
-    
-  }
-  .verticalcontainer {
-    flex-wrap: nowrap;
-    flex-direction: column;
-    
-  }
-  
   .middle-text {
-      text-align: center;
-      font-weight: bold;
+    text-align: center;
+    font-weight: bold;
 
   }
 
   
-  .item2 + .item2 {
-    margin-left: 0%;
-  }
+ 
 
 
+/* footer för alla sidor*/
 .footer {
   background-color: rgba(128, 128, 128, 0.788);
   width: 100%;
@@ -127,105 +146,31 @@
 }
  
 
-/*SLIDE*/
 
-* {box-sizing:border-box}
-
-.bildspel-container {
-  max-width: 100%;
-  position: relative;
-  margin: auto;
-  vertical-align: middle;
-  justify-content: center;
-}
-
-.bildspel {
-  display: none;
-  background-color:rgba(0,0,0,0.8);
-  border: 5px solid rgba(0,0,0,0.8);
-  border-radius: 5px;
-  height: 50%;
-  width: 50%;
-  margin: auto;
-
-}
-
-.prev, .next {
-    cursor: pointer;
-    position: absolute;
-    top: 50%;
-    width: auto;
-    padding: 16px;
-    margin-top: -22px;
-    color: white;
-    font-weight: bold;
-    font-size: 18px;
-    transition: 0.6s ease;
-    user-select: none;
-}
-
-.next {
-  right: 25%;
-  border-radius: 3px 0 0 3px;
-}
-
-.prev {
-    left: 25%;
-    border-radius: 0px 3px 3px 0px;
-}
-
-.prev:hover, .next:hover {
-  background-color: rgba(0,0,0,0.8);
-}
-
-
-
-
-.active, .dot:hover {
-  background-color: #717171;
-}
-.fade {
-  -webkit-animation-name: fade;
-  -webkit-animation-duration: 1.5s;
-  animation-name: fade;
-  animation-duration: 1.5s;
-}
-
-@-webkit-keyframes fade {
-  from {opacity: .4}
-  to {opacity: 1}
-}
-
-@keyframes fade {
-  from {opacity: .4}
-  to {opacity: 1}
-}
-:focus {
-    background-color: #2980B9;
-  }
-  
+/*dropdown container*/
 .dropdown {
     position: relative;
     display: inline-block;
   }
-  
+/*dropdownflexbox*/
 .dropdown-content {
     display: none;
     position: absolute;
-    background-color: #f1f1f1;
+    background-color: whitesmoke;
     min-width: 160px;
     overflow: auto;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
   }
-  
+
+/*dropdown text*/
 .dropdown-content a {
     color: black;
     padding: 12px 16px;
     text-decoration: none;
     display: block;
   }
-  
+/*dropdown hover över knappen*/
 .dropdown a:hover {
     background-color: #ddd;
 }
@@ -234,6 +179,7 @@
     display: block;
 }
 
+/*hover över varukorg*/
 .animation:hover {
   background-color: rgb(155, 153, 153);
   animation-name: cart;
@@ -241,7 +187,7 @@
   animation-iteration-count: 5;
   animation-direction: normal;
 }
-
+/*vad som händer i animation*/
 @keyframes cart {
   0% {background-color: grey;transform: translateY(0%);}
   20% {transform:translateX(50%);}
@@ -252,6 +198,7 @@
   100% {background-color: grey;transform: translateY(0%);}
 }
 
+/*container för produkt.html*/
 .colletion{
   display: flex;
   flex-wrap: wrap;
@@ -259,19 +206,19 @@
   
 
 }
-
+/*flexbox för produkter i produkt.html*/
 .products {
   width: 32%;
   background-color:rgba(255, 253, 208, 0.562);
   
 }
-
+/*pris container för produkt*/
 .price-container {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
 }
-
+/*pris för produkt*/
 .price {
   width: 32%;
   margin-bottom: 2%;
@@ -288,7 +235,8 @@
   margin-top: 6px;
 
 }
-.product-image {
+/*bild med border*/
+.border-image {
   border: solid black 3px;
   border-radius: 5px;
 }
